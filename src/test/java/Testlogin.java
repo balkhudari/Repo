@@ -1,25 +1,30 @@
 import com.Base;
 import com.Pages.ContactPage;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-import org.openqa.selenium.By;
+import com.Utils.TestUtils;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
-
 
 public class Testlogin extends Base {
 
     @Test
     public void loginTest() {
+      TestUtils utils= new TestUtils();
+     ContactPage contactPage = new ContactPage(driver);
+       // contactPage.loginTest();
+        //  utils.scrollNClick(contactPage.name,"Irma Bolden");
+        //  utils.scrollDown();
 
-        ContactPage contactPage = new ContactPage(driver);
-        contactPage.loginTest();
+        utils.scrollIntoView("Irma Bolden");
+        String expectedNum= "+1(232)-8335268";
+        String expectedEmail= "irm@outlook.com";
+         String expectedAdress= "307 Joyce Street";
+         Assert.assertEquals(contactPage.getContactNum().getText(),expectedNum);
+        Assert.assertEquals(contactPage.getEmail().getText(),expectedEmail);
+        Assert.assertEquals(contactPage.getStreetAdress().getText(),expectedAdress);
 
+    }
 
-
-
-
-}
 }
 
 

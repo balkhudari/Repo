@@ -1,0 +1,5 @@
+platformName = Android
+appPackage= com.jayway.contacts
+appActivity= com.jayway.contacts.MainActivity
+deviceName= DEF4C19418002178
+app= "C:\\Users\\balkhudari\\Downloads\\Contacts.apk"
